@@ -15,8 +15,89 @@ window.onload=function(){
     let redesign_2 = document.querySelector(".redesign_2")
     let end = document.querySelector(".end")
     let contact = document.querySelector(".contact")
-console.log(redesign_1)
+
+    let viewtypes = document.querySelectorAll(".viewtype>ul>li>a")
+
   let imgs = document.querySelectorAll(".redesign_1 .frame .imgframe>h1>img")
+
+console.log(viewtypes)
+// for(let i=0; i<viewtypes.length;i++){
+//   viewtypes[i].addEventListener("click",function(){
+
+//     let viewportwidth = window.innerWidth
+//     window.open(this.href, `_blank`, `width=1920`)
+
+//   })
+// }
+
+viewtypes[0].addEventListener("click",function(e){
+  e.preventDefault()
+
+  window.open(this.href, `_blank`, `width=1920, height=1000`)
+
+})
+
+
+viewtypes[1].addEventListener("click",function(e){
+  e.preventDefault()
+  window.open(this.href, `_blank`, `width=1023, height=1000`)
+
+})
+
+viewtypes[2].addEventListener("click",function(e){
+e.preventDefault()
+  window.open(this.href, `_blank`, `width=450, height=1000`)
+})
+viewtypes[3].addEventListener("click",function(e){
+  e.preventDefault()
+
+  window.open(this.href, `_blank`, `width=1920, height=1000`)
+
+})
+
+
+viewtypes[4].addEventListener("click",function(e){
+  e.preventDefault()
+  window.open(this.href, `_blank`, `width=1023, height=1000`)
+
+})
+
+viewtypes[5].addEventListener("click",function(e){
+e.preventDefault()
+  window.open(this.href, `_blank`, `width=450, height=1000`)
+})
+
+
+
+
+
+
+
+//   open_submit_franchise.addEventListener("click",function(e){
+    
+//     e.preventDefault()
+
+//     if (matchMedia("screen and (max-width: 768px)").matches) {
+//         window.open(this.href, `_blank`, `width=${viewportwidth}, height=1000`);
+//     return false;
+//     }
+//     else{
+//         window.open(this.href, `_blank`, `width=1200, height=1000`);
+//     return false;
+//     }
+    
+
+// })
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -37,6 +118,8 @@ console.log(redesign_1)
                 cloud[1].style.transform = `translateX(100%)`
                 setTimeout(function(){
                   introduce.classList.add("open")
+                  about_imgframe.classList.remove("downtoup")
+                  about_txtframe.classList.remove("downtoup")
                 },700)
                 
                 setTimeout(function(){
@@ -112,26 +195,16 @@ console.log(redesign_1)
             }
 
             if(baseElementTop === clientHeight*1){
-              
+              return
                 scrollTo({
                   top: clientHeight *5,
-                  behavior : "instant"
+                  behavior : "smooth"
               })
                 
             }
             
               }
             }
-            
-        //   if (baseElementTop === clientHeight * (article.length - i)) {
-        //         scrollTo({
-        //             top: clientHeight * i,
-        //             behavior: "",
-        //           });
-        //     }
-            
-        //   }
-
 
 
 

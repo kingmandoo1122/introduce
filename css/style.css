@@ -18,6 +18,7 @@
 
 /* reset */
 
+
 *{margin:0;padding:0}
 ul,ol{
     list-style: none;
@@ -60,6 +61,65 @@ img{
 
 
 /*  */
+
+
+header{
+    position: fixed;
+    top:0;
+    background: rgb(87, 123, 156);
+    width: 100%;
+    height: 100px;
+    z-index: 10
+}
+nav{
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.gnb>li{
+    margin-right: 30px;
+}
+
+.gnb{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .introduce{
@@ -119,7 +179,7 @@ z-index: -1;
     opacity: 0;
     width:300px;
     margin: 0 auto;
-    margin-top:25%;
+    margin-top:15vh;
     position: relative;
     animation: mouse_ani 1s linear 3.7s forwards
 }
@@ -290,6 +350,7 @@ z-index: -1;
 section{
     position: relative;
 }
+
 section.open::before{
     top:50%;
     left:50%;
@@ -457,11 +518,25 @@ section.close::before{
 
 .redesign_1 .imgframe img{
     position: absolute;
+    transition: all 1.3s linear 0s;
 }
 
+.redesign_1 .imgframe img.on{
+    animation: redesign_img 1s ease 0s forwards;
 
+}
 
+@keyframes redesign_img {
+    0%{
+        z-index: 100;
+    }
+    100%{
+        z-index: 100;
+        transform: translate(50%,17%) scale(6.6);
+       
+}
 
+}
 .redesign_1 .txtframe{
     opacity: 0;
 }
@@ -765,12 +840,16 @@ section.close::before{
 .contact{
     display: flex;
     align-items: center;
+    text-align: center;
 }
   .contact h1.eng{
     font-size: 50px;
     text-align: center;
-    margin-bottom: 50px;
-  }
+    margin-bottom: 30px;
+}
+
+
+
 
 .contact .frame{
     display: flex;
@@ -792,6 +871,9 @@ section.close::before{
 .contact_info>li{
     display: flex;
     margin-bottom: 15px;
+}
+.contact_info>li address{
+    width: 400px;
 }
     
 .contact_info h1{
