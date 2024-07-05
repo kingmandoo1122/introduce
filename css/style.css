@@ -871,6 +871,7 @@ section.close::before{
 .contact_info>li{
     display: flex;
     margin-bottom: 15px;
+    align-items: center;
 }
 .contact_info>li address{
     width: 400px;
