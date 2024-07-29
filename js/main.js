@@ -1,7 +1,7 @@
 window.onload=function(){
 
 
-    let article = document.querySelectorAll("section")
+    let article = document.querySelectorAll("main>*")
     let introduce = document.querySelector(".introduce")
     let bg_gradient = document.querySelector(".bg_gradient")
     let about= document.querySelector(".about")
@@ -15,7 +15,8 @@ window.onload=function(){
     let redesign_2 = document.querySelector(".redesign_2")
     let end = document.querySelector(".end")
     let contact = document.querySelector(".contact")
-
+    let geturl_tous = document.querySelector(".redesign_1 .geturl a")
+    let geturl_thecaffe = document.querySelector(".redesign_2 .geturl a")
     let viewtypes = document.querySelectorAll(".viewtype>ul>li>a")
 
   let imgs = document.querySelectorAll(".redesign_1 .frame .imgframe>h1>img")
@@ -29,6 +30,22 @@ console.log(viewtypes)
 
 //   })
 // }
+geturl_tous.addEventListener("click",function(e){
+  e.preventDefault()
+  window.navigator.clipboard.writeText("https://kingmandoo1122.github.io/touslesjours/")
+  alert("클립보드에 복사되었습니다.")
+})
+
+geturl_thecaffe.addEventListener("click",function(e){
+  e.preventDefault()
+  window.navigator.clipboard.writeText("https://kingmandoo1122.github.io/thecaffe/")
+  alert("클립보드에 복사되었습니다.")
+})
+
+
+
+
+
 
 viewtypes[0].addEventListener("click",function(e){
   e.preventDefault()
@@ -111,6 +128,7 @@ e.preventDefault()
     }
 
     function wheelDown(article, baseElementTop, clientHeight) {
+      console.log(baseElementTop,clientHeight)
         for (let i = 1; i < article.length; i++) {
             
             if(baseElementTop === clientHeight*5){
@@ -195,7 +213,6 @@ e.preventDefault()
             }
 
             if(baseElementTop === clientHeight*1){
-              return
                 scrollTo({
                   top: clientHeight *5,
                   behavior : "smooth"
@@ -209,7 +226,7 @@ e.preventDefault()
 
 
       function wheelUp(article, baseElementTop, clientHeight) {
-
+        console.log(baseElementTop,clientHeight)
         for (let i = 0; i < article.length - 1; i++) {
           
           if(baseElementTop === clientHeight*4){
@@ -289,8 +306,47 @@ e.preventDefault()
         //   redesign_txtframe[1].classList.add("downtoup")
         // },1000)
       }
-        }
+      if(baseElementTop === Math.floor(clientHeight*0.75)){
+        // contact.classList.remove("close")
+      // setTimeout(function(){
+      //   contact.classList.add("open")
+      // },10)
+
+      scrollTo({
+        top: clientHeight *4,
+        behavior : "smooth"
+    })
+      // setTimeout(function(){
+      // contact.classList.remove("open")
+      // redesign_2.classList.add("close")
+      // },900)
+       
+      // setTimeout(function(){
+      //   redesign_imgframe[1].classList.add("downtoup")
+      //   redesign_txtframe[1].classList.add("downtoup")
+      // },1000)
+    }
+      // setTimeout(function(){
+      // contact.classList.remove("open")
+      // redesign_2.classList.add("close")
+      // },900)
+       
+      // setTimeout(function(){
+      //   redesign_imgframe[1].classList.add("downtoup")
+      //   redesign_txtframe[1].classList.add("downtoup")
+      // },1000)
+    }
+
+
+
+
+
+
+
+
+        
       }
+
 
 
       // function wheelUp(article, baseElementTop, clientHeight) {
